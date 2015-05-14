@@ -1133,3 +1133,15 @@
     root.platform = parse();
   }
 }.call(this));
+
+(function (){
+    try {
+        var root = document.getElementsByTagName( 'html' )[0];
+        root.className += " " + platform.layout.toLowerCase();
+        root.className += " " + platform.name.toLowerCase();
+        root.className += " " + platform.name.toLowerCase() + platform.version.split('.')[0];
+        root.className += " " + platform.os.family.toLowerCase();
+    } catch(e) {
+        console.log(e)
+    }
+})();
